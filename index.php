@@ -7,13 +7,33 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-    <a href="arrayPalabras.php"></a>
+    
+        
         <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        
         <script src="newjavascript.js" type="text/javascript"></script>
+        
+        <script src="controller.js" type="text/javascript"></script>
+        
+        <script src="service.js" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
         <title></title>
     </head>
-    <body>
-        <button onclick="start()">PALABRA ALEATORIA</button>
+    <body ng-app="ahorcado" ng-controller="controlador">
+        <div class="container">
+             <button ng-click="getLong()"> Medida Palabra</button>
+             <input type="text" ng-model="letra"/>
+                 <button ng-click="comprobar()"> Comprobar</button>
+             <div>{{palabra}}</div>
+             <div ng-repeat="letra in palabra track by $index">_</div>
+             <div ng-repeat="letras in arrayPetu track by $index">{{letras}}</div>
+        </div>
+       
         <div id="mensaje"></div>
     </body>
 </html>
